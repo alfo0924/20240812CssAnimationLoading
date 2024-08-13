@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Logo to Hello World</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000000;
+            transition: background-color 0.5s ease;
+        }
+        .logo {
+            width: 300px;
+            height: 300px;
+        }
+        .st0 {
+            fill: #FFFFFF;
+        }
+        h1 {
+            font-size: 48px;
+            color: #FFFFFF;
+            font-family: Arial, sans-serif;
+            display: none;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <svg class="logo" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+         viewBox="0 0 1080 1080" style="enable-background:new 0 0 1080 1080;" xml:space="preserve">
+        <path class="st0" d="M540,0C241.8,0,0,241.8,0,540s241.8,540,540,540s540-241.8,540-540S838.2,0,540,0z M540,980
+            c-242.5,0-440-197.5-440-440S297.5,100,540,100s440,197.5,440,440S782.5,980,540,980z"/>
+        <path class="st0" d="M540,200c-187.3,0-340,152.7-340,340s152.7,340,340,340s340-152.7,340-340S727.3,200,540,200z M540,780
+            c-132.5,0-240-107.5-240-240s107.5-240,240-240s240,107.5,240,240S672.5,780,540,780z"/>
+        <circle class="st0" cx="540" cy="540" r="140"/>
+    </svg>
+
+    <h1>Hello World</h1>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const logo = document.querySelector('.logo');
+            const heading = document.querySelector('h1');
+            
+            logo.style.animation = 'spin 1s linear infinite';
+
+            setTimeout(function() {
+                logo.style.display = 'none';
+                heading.style.display = 'block';
+                document.body.style.backgroundColor = '#808080';
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
